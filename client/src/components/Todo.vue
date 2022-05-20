@@ -25,7 +25,7 @@
           class="flex-none h-6 w-6 flex items-center justify-center hover:text-gray-600"
           @click="deleteTodo(todo)"
         >
-          <CloseIcon />
+          ×
         </div>
       </li>
     </ul>
