@@ -1,5 +1,23 @@
 # test-gRPC
 
+## 構成
+
+### client
+
+Vue3 で作られたテストツール
+
+### envoy
+
+gRPC をフロントエンドで使える様にしてくれるリバプロ
+
+### generate
+
+server の protoc で出力された common.js ファイルを ESM に変換する
+
+### server
+
+バックエンド側の gRPC サーバー
+
 ## 参考 URL
 
 - https://qiita.com/hannoeru/items/9be8b6c09b17d480406b
