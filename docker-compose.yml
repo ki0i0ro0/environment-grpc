@@ -1,19 +1,15 @@
 version: '3'
 
 services:
+  client:
+    build: ./client
+    ports:
+      - 3000:8080
   proxy:
     build: ./envoy
     ports:
       - 8080:8080
-    restart: unless-stopped
-    networks:
-      - grpc-todolist
   server:
     build: ./server
-    image: todo-grpc-server:v1
-    restart: unless-stopped
-    networks:
-      - grpc-todolist
-networks:
-  grpc-todolist:
-    driver: bridge
+    ports:
+      - 9090:9090
