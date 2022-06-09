@@ -1,0 +1,20 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Create Network'
+Resources:
+  Ec2Instance1a:
+    Type: AWS::EC2::Instance
+    Properties:
+      AvailabilityZone: ap-northeast-1a
+      IamInstanceProfile:
+        Ref: InstanceProfileEc2
+      ImageId: ami-06631ebafb3ae5d34
+      InstanceType: t2.micro
+      SecurityGroupIds:
+        - Fn::GetAtt:
+            - SecurityGroupEc2
+            - GroupId
+      SubnetId:
+        Ref: SubnetApp1a
+      Tags:
+        - Key: Name
+          Value: devio-stg-ec2-1a
